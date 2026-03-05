@@ -1,6 +1,6 @@
 # Feedback and Annotations
 
-Context Hub has two mechanisms for agents to improve over time: **annotations** (local, for your agent) and **feedback** (sent to authors, for everyone).
+Context Hub has two mechanisms for agents to improve over time: **annotations** (local, for your agent) and **feedback** (about the overall quality of the docs with pre-labels).
 
 ## Annotations
 
@@ -76,7 +76,7 @@ Annotations are stored locally at `~/.chub/annotations/` as JSON files. They are
 
 ## Feedback
 
-Feedback is sent to doc authors via the registry. It helps maintainers understand what's working and what needs improvement.
+Feedback helps maintainers understand what's working and what needs improvement.
 
 ### Usage
 
@@ -84,9 +84,6 @@ Feedback is sent to doc authors via the registry. It helps maintainers understan
 # Simple up/down rating
 chub feedback stripe/api up
 chub feedback stripe/api down
-
-# With a comment
-chub feedback stripe/api up "Clear examples, well structured"
 
 # With labels for specific issues
 chub feedback openai/chat down --label outdated --label wrong-examples
