@@ -12,7 +12,7 @@
     {
       "id": "step-1-welcome",
       "title": "Welcome to Context Hub",
-      "description": "Context Hub (chub) is a CLI tool and registry that bridges the gap between rapidly evolving APIs and LLM knowledge cutoffs. It gives AI coding agents access to accurate, up-to-date API documentation instead of relying on training data. The project has two main parts: the CLI application in cli and the content registry in content with 68 providers and 115 docs.",
+      "description": "Context Hub (chub) is a CLI tool and registry that bridges the gap between rapidly evolving APIs and LLM knowledge cutoffs. It gives AI coding agents access to accurate, up-to-date API documentation instead of relying on training data. The project has two main parts: the CLI application in cli and the content registry in content with 68 providers and one hundred and fifteen docs.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "highlightLayers": [
@@ -109,7 +109,7 @@
     {
       "id": "step-4-content-registry",
       "title": "Content Registry",
-      "description": "The content directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants like JavaScript, Python, and TypeScript. The build command compiles this into a searchable registry.json",
+      "description": "The content directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants like JavaScript, Python, and TypeScript. The build command compiles this into a searchable registry JSON file",
       "estimatedTime": 90,
       "focusDirectory": "content",
       "highlightLayers": [
