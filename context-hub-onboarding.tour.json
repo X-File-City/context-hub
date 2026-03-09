@@ -109,7 +109,7 @@
     {
       "id": "step-4-content-registry",
       "title": "Content Registry",
-      "description": "The content directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants (javascript, python, ts subdirectories). The build command compiles this into a searchable registry.json.",
+      "description": "The content directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants like JavaScript, Python, and TypeScript. The build command compiles this into a searchable registry.json",
       "estimatedTime": 90,
       "focusDirectory": "content",
       "highlightLayers": [
