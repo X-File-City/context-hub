@@ -12,7 +12,7 @@
     {
       "id": "step-1-welcome",
       "title": "Welcome to Context Hub",
-      "description": "Context Hub (chub) is a CLI tool and registry that bridges the gap between rapidly evolving APIs and LLM knowledge cutoffs. It gives AI coding agents access to accurate, up-to-date API documentation instead of relying on training data. The project has two main parts: the CLI application in cli/ and the content registry in content/ with 68 providers and 115 docs.",
+      "description": "Context Hub (chub) is a CLI tool and registry that bridges the gap between rapidly evolving APIs and LLM knowledge cutoffs. It gives AI coding agents access to accurate, up-to-date API documentation instead of relying on training data. The project has two main parts: the CLI application in cli and the content registry in content with 68 providers and 115 docs.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "highlightLayers": [
@@ -33,7 +33,7 @@
     {
       "id": "step-2-cli-entry-points",
       "title": "CLI Entry Points & Commands",
-      "description": "The CLI is built with commander.js. Two entry points live in cli/bin/: chub for the main CLI and chub-mcp for the MCP server. The orchestration hub is cli/src/index.js which registers all commands. The seven command handlers in cli/src/commands/ implement search, get, annotate, feedback, update, cache, and build.",
+      "description": "The CLI is built with commander.js. Two entry points live in cli/bin: chub for the main CLI and chub-mcp for the MCP server. The orchestration hub is cli/src/index.js which registers all commands. The seven command handlers in cli/src/commands implement search, get, annotate, feedback, update, cache, and build.",
       "estimatedTime": 90,
       "focusDirectory": "cli/src",
       "highlightLayers": [
@@ -70,7 +70,7 @@
     {
       "id": "step-3-library-modules",
       "title": "Core Library Modules",
-      "description": "The lib/ directory contains the engine that powers everything. registry.js handles loading, merging, and searching entries across multiple sources. bm25.js implements full-text search ranking. cache.js manages local caching and doc fetching. config.js parses the multi-source configuration. These modules work together to provide fast, reliable documentation access.",
+      "description": "The lib directory contains the engine that powers everything. registry.js handles loading, merging, and searching entries across multiple sources. bm25.js implements full-text search ranking. cache.js manages local caching and doc fetching. config.js parses the multi-source configuration. These modules work together to provide fast, reliable documentation access.",
       "estimatedTime": 120,
       "focusDirectory": "cli/src/lib",
       "highlightLayers": [
@@ -109,7 +109,7 @@
     {
       "id": "step-4-content-registry",
       "title": "Content Registry",
-      "description": "The content/ directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs/ subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants (javascript/, python/, ts/ subdirectories). The build command compiles this into a searchable registry.json.",
+      "description": "The content directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants (javascript, python, ts subdirectories). The build command compiles this into a searchable registry.json.",
       "estimatedTime": 90,
       "focusDirectory": "content",
       "highlightLayers": [
@@ -168,7 +168,7 @@
     {
       "id": "step-6-testing-and-ci",
       "title": "Testing & CI/CD",
-      "description": "Tests use vitest and live in two directories: cli/test/ (legacy) and cli/tests/ (current). CI runs on GitHub Actions testing against Node 18, 20, and 22. The deploy-content workflow builds and publishes the registry to CDN, while publish.yml handles npm releases of the @aisuite/chub package.",
+      "description": "Tests use vitest and live in two directories: cli/test (legacy) and cli/tests (current). CI runs on GitHub Actions testing against Node 18, 20, and 22. The deploy-content workflow builds and publishes the registry to CDN, while publish.yml handles npm releases of the @aisuite/chub package.",
       "estimatedTime": 90,
       "focusDirectory": "",
       "highlightLayers": [
@@ -199,7 +199,7 @@
     {
       "id": "step-7-documentation",
       "title": "Project Documentation",
-      "description": "The docs/ directory contains guides for contributors and users. design.md explains architectural decisions. content-guide.md shows how to add new provider docs. cli-reference.md is the full command reference. The byod-guide and private-content docs cover bringing your own documentation and using internal/private content sources.",
+      "description": "The docs directory contains guides for contributors and users. design.md explains architectural decisions. content-guide.md shows how to add new provider docs. cli-reference.md is the full command reference. The byod-guide and private-content docs cover bringing your own documentation and using internal/private content sources.",
       "estimatedTime": 60,
       "focusDirectory": "docs",
       "highlightLayers": [
@@ -228,7 +228,7 @@
     {
       "id": "step-8-full-picture",
       "title": "The Complete Picture",
-      "description": "You've now seen the full Context Hub architecture: the CLI in cli/ orchestrates commands, lib modules provide search and caching, the content registry in content/ holds 68 providers of API docs, MCP integration lets agents access everything programmatically, and comprehensive tests and CI keep it all reliable. To get started contributing, check docs/content-guide.md for adding docs or dive into cli/src/ for CLI improvements.",
+      "description": "You've now seen the full Context Hub architecture: the CLI in cli orchestrates commands, lib modules provide search and caching, the content registry in content holds 68 providers of API docs, MCP integration lets agents access everything programmatically, and comprehensive tests and CI keep it all reliable. To get started contributing, check content-guide.md in docs for adding docs or dive into cli/src for CLI improvements.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "colorMode": "fileTypes"
