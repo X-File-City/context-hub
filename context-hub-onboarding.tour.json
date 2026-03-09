@@ -1,0 +1,247 @@
+{
+  "id": "context-hub-onboarding",
+  "title": "Context Hub Onboarding Tour",
+  "description": "Learn how Context Hub provides AI agents with curated, versioned API documentation through a CLI tool and content registry",
+  "version": "1.0.0",
+  "audience": "New Contributors",
+  "prerequisites": [
+    "Basic Node.js and ES modules knowledge",
+    "Familiarity with CLI tools"
+  ],
+  "steps": [
+    {
+      "id": "step-1-welcome",
+      "title": "Welcome to Context Hub",
+      "description": "Context Hub (chub) is a CLI tool and registry that bridges the gap between rapidly evolving APIs and LLM knowledge cutoffs. It gives AI coding agents access to accurate, up-to-date API documentation instead of relying on training data. The project has two main parts: the CLI application in cli/ and the content registry in content/ with 68 providers and 115 docs.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "main-areas",
+          "name": "Core Project Areas",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "cli", "type": "directory" },
+            { "path": "content", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-2-cli-entry-points",
+      "title": "CLI Entry Points & Commands",
+      "description": "The CLI is built with commander.js. Two entry points live in cli/bin/: chub for the main CLI and chub-mcp for the MCP server. The orchestration hub is cli/src/index.js which registers all commands. The seven command handlers in cli/src/commands/ implement search, get, annotate, feedback, update, cache, and build.",
+      "estimatedTime": 90,
+      "focusDirectory": "cli/src",
+      "highlightLayers": [
+        {
+          "id": "entry-points",
+          "name": "Entry Points",
+          "color": "#f59e0b",
+          "items": [
+            { "path": "cli/src/index.js", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "borderWidth": 2
+        },
+        {
+          "id": "commands",
+          "name": "Command Handlers",
+          "color": "#3b82f6",
+          "items": [
+            { "path": "cli/src/commands", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Click to view the CLI orchestration hub",
+          "target": "cli/src/index.js"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-3-library-modules",
+      "title": "Core Library Modules",
+      "description": "The lib/ directory contains the engine that powers everything. registry.js handles loading, merging, and searching entries across multiple sources. bm25.js implements full-text search ranking. cache.js manages local caching and doc fetching. config.js parses the multi-source configuration. These modules work together to provide fast, reliable documentation access.",
+      "estimatedTime": 120,
+      "focusDirectory": "cli/src/lib",
+      "highlightLayers": [
+        {
+          "id": "search-engine",
+          "name": "Search & Registry",
+          "color": "#10b981",
+          "items": [
+            { "path": "cli/src/lib/registry.js", "type": "file" },
+            { "path": "cli/src/lib/bm25.js", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "borderWidth": 2
+        },
+        {
+          "id": "data-layer",
+          "name": "Cache & Config",
+          "color": "#8b5cf6",
+          "items": [
+            { "path": "cli/src/lib/cache.js", "type": "file" },
+            { "path": "cli/src/lib/config.js", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Explore the registry module",
+          "target": "cli/src/lib/registry.js"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-4-content-registry",
+      "title": "Content Registry",
+      "description": "The content/ directory is the heart of the project — it stores curated API documentation from 68 providers. Each provider has a docs/ subdirectory with entries. Docs use YAML frontmatter for metadata and support multi-language variants (javascript/, python/, ts/ subdirectories). The build command compiles this into a searchable registry.json.",
+      "estimatedTime": 90,
+      "focusDirectory": "content",
+      "highlightLayers": [
+        {
+          "id": "major-providers",
+          "name": "Major Providers",
+          "color": "#ef4444",
+          "items": [
+            { "path": "content/openai", "type": "directory" },
+            { "path": "content/anthropic", "type": "directory" },
+            { "path": "content/stripe", "type": "directory" },
+            { "path": "content/aws", "type": "directory" },
+            { "path": "content/google", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "hover-directory",
+          "description": "Hover over provider directories to see their docs",
+          "target": "content/openai"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-5-mcp-integration",
+      "title": "MCP Server Integration",
+      "description": "Context Hub exposes its capabilities as MCP (Model Context Protocol) tools, letting AI agents like Claude Code and Cursor access docs directly. server.js sets up the MCP server with stdio transport, and tools.js implements five tools: chub_search, chub_get, chub_list, chub_annotate, and chub_feedback. This is how agents fetch accurate API docs during coding.",
+      "estimatedTime": 90,
+      "focusDirectory": "cli/src/mcp",
+      "highlightLayers": [
+        {
+          "id": "mcp-files",
+          "name": "MCP Implementation",
+          "color": "#ec4899",
+          "items": [
+            { "path": "cli/src/mcp/server.js", "type": "file" },
+            { "path": "cli/src/mcp/tools.js", "type": "file" }
+          ],
+          "opacity": 0.8,
+          "borderWidth": 2
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "View the MCP tool implementations",
+          "target": "cli/src/mcp/tools.js"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-6-testing-and-ci",
+      "title": "Testing & CI/CD",
+      "description": "Tests use vitest and live in two directories: cli/test/ (legacy) and cli/tests/ (current). CI runs on GitHub Actions testing against Node 18, 20, and 22. The deploy-content workflow builds and publishes the registry to CDN, while publish.yml handles npm releases of the @aisuite/chub package.",
+      "estimatedTime": 90,
+      "focusDirectory": "",
+      "highlightLayers": [
+        {
+          "id": "test-dirs",
+          "name": "Test Suites",
+          "color": "#06b6d4",
+          "items": [
+            { "path": "cli/test", "type": "directory" },
+            { "path": "cli/tests", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        },
+        {
+          "id": "ci-config",
+          "name": "CI/CD Workflows",
+          "color": "#f97316",
+          "items": [
+            { "path": ".github", "type": "directory" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-7-documentation",
+      "title": "Project Documentation",
+      "description": "The docs/ directory contains guides for contributors and users. design.md explains architectural decisions. content-guide.md shows how to add new provider docs. cli-reference.md is the full command reference. The byod-guide and private-content docs cover bringing your own documentation and using internal/private content sources.",
+      "estimatedTime": 60,
+      "focusDirectory": "docs",
+      "highlightLayers": [
+        {
+          "id": "key-docs",
+          "name": "Key Documentation",
+          "color": "#a855f7",
+          "items": [
+            { "path": "docs/design.md", "type": "file" },
+            { "path": "docs/content-guide.md", "type": "file" },
+            { "path": "docs/cli-reference.md", "type": "file" }
+          ],
+          "opacity": 0.7,
+          "borderWidth": 2
+        }
+      ],
+      "interactiveActions": [
+        {
+          "type": "click-file",
+          "description": "Read the architecture design doc",
+          "target": "docs/design.md"
+        }
+      ],
+      "colorMode": "fileTypes"
+    },
+    {
+      "id": "step-8-full-picture",
+      "title": "The Complete Picture",
+      "description": "You've now seen the full Context Hub architecture: the CLI in cli/ orchestrates commands, lib modules provide search and caching, the content registry in content/ holds 68 providers of API docs, MCP integration lets agents access everything programmatically, and comprehensive tests and CI keep it all reliable. To get started contributing, check docs/content-guide.md for adding docs or dive into cli/src/ for CLI improvements.",
+      "estimatedTime": 60,
+      "focusDirectory": "",
+      "colorMode": "fileTypes"
+    }
+  ],
+  "metadata": {
+    "author": "Context Hub Team",
+    "createdAt": "2026-03-09T00:00:00.000Z",
+    "tags": [
+      "onboarding",
+      "cli",
+      "documentation",
+      "ai-agents"
+    ]
+  }
+}
