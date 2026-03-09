@@ -33,7 +33,7 @@
     {
       "id": "step-2-cli-entry-points",
       "title": "CLI Entry Points & Commands",
-      "description": "The CLI is built with commander.js. Two entry points live in cli/bin: chub for the main CLI and chub-mcp for the MCP server. The orchestration hub is cli/src/index.js which registers all commands. The seven command handlers in cli/src/commands implement search, get, annotate, feedback, update, cache, and build.",
+      "description": "The CLI is built with commander. Two entry points exist: chub for the main CLI and chub-mcp for the MCP server. The highlighted index.js file is the orchestration hub that registers all commands. The commands directory contains seven handlers for search, get, annotate, feedback, update, cache, and build.",
       "estimatedTime": 90,
       "focusDirectory": "cli/src",
       "highlightLayers": [
