@@ -140,7 +140,7 @@
     {
       "id": "step-5-mcp-integration",
       "title": "MCP Server Integration",
-      "description": "Context Hub exposes its capabilities as MCP (Model Context Protocol) tools, letting AI agents like Claude Code and Cursor access docs directly. server.js sets up the MCP server with stdio transport, and tools.js implements five tools: chub_search, chub_get, chub_list, chub_annotate, and chub_feedback. This is how agents fetch accurate API docs during coding.",
+      "description": "Context Hub exposes its capabilities as MCP tools, letting AI agents like Claude Code and Cursor access docs directly. server.js sets up the MCP server with stdio transport, and tools.js implements five tools: chub_search, chub_get, chub_list, chub_annotate, and chub_feedback. This is how agents fetch accurate API docs during coding.",
       "estimatedTime": 90,
       "focusDirectory": "cli/src/mcp",
       "highlightLayers": [
@@ -168,7 +168,7 @@
     {
       "id": "step-6-testing-and-ci",
       "title": "Testing & CI/CD",
-      "description": "Tests use vitest and live in two directories: cli/test (legacy) and cli/tests (current). CI runs on GitHub Actions testing against Node 18, 20, and 22. The deploy-content workflow builds and publishes the registry to CDN, while publish.yml handles npm releases of the @aisuite/chub package.",
+      "description": "Tests use vitest and live in two directories: cli/test (legacy) and cli/tests (current). CI runs on GitHub Actions testing against Node 18, 20, and 22. The deploy-content workflow builds and publishes the registry to CDN, while publish.yml handles npm releases of the aisuite/chub package.",
       "estimatedTime": 90,
       "focusDirectory": "",
       "highlightLayers": [
